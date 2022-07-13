@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sa2ci.Core.Bll\Sa2ci.Core.Bll.csproj" />
+    <ProjectReference Include="..\Sa2ci.Core.Dal\Sa2ci.Core.Dal.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TypescriptGenerators\MemberDto.ts">
+      <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\MemberDto.cs</CustomToolNamespace>
+    </None>
+    <None Update="TypescriptGenerators\MembersService.ts">
+      <CustomToolNamespace>Controllers\MembersController.cs</CustomToolNamespace>
+    </None>
+    <None Update="TypescriptGenerators\WeatherForecastService.ts">
+      <CustomToolNamespace>Controllers\WeatherForecastController.cs</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="for /r &quot;$(ProjectDir)TypescriptGenerators&quot; %25%25x in (*Service.ts) do move &quot;%25%25x&quot; &quot;$(SolutionDir)Sa2ci.Core.Front\src\services\generated&quot;&#xD;&#xA;&#xD;&#xA;for /r &quot;$(ProjectDir)TypescriptGenerators&quot; %25%25x in (*.ts) do move &quot;%25%25x&quot; &quot;$(SolutionDir)Sa2ci.Core.Front\src\models\generated&quot;" />
+  </Target>
+
+</Project>
