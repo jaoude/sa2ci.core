@@ -21,5 +21,14 @@ namespace Sa2ci.Core.Dal.Data.Entities
         [Required]
         [MaxLength(100)]
         public string LastName { get; set; } = string.Empty;
+
+        [Required]
+        [MaxLength(254)]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; } = string.Empty;
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateOnly DOB { get; set; }
     }
 }
