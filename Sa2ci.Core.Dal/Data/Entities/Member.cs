@@ -28,7 +28,7 @@ namespace Sa2ci.Core.Dal.Data.Entities
         public string Email { get; set; } = string.Empty;
 
         [Required]
-        [DataType(DataType.Date)]
-        public DateOnly DOB { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime DOB { get; set; }
     }
 }

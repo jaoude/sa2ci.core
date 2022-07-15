@@ -21,33 +21,33 @@ namespace Sa2ci.Core.Bll.Services
 
         public async Task<List<MemberDto>> GetAllAsync()
         {
-            var bogusResult = new List<Member>();
-            Using_The_Faker_Facade();
-            var result = await _context.Members
-                .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-                .ToListAsync();
+
+            //var result = await _context.Members
+            //    .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
+            //    .ToListAsync();
+
+            var result = await Task.FromResult(Using_The_Faker_Facade());
 
             return result;
         }
 
-        public void Using_The_Faker_Facade()
+        public List<MemberDto> Using_The_Faker_Facade()
         {
-            var faker = new Faker<Member>()
+            var faker = new Faker<MemberDto>()
                 .RuleFor(o => o.FirstName, f => f.Person.FirstName)
                 .RuleFor(o => o.LastName, f => f.Person.LastName)
                 .RuleFor(o => o.Email, f => f.Person.Email)
-                .RuleFor(o => o.DOB, f => f.Date.PastDateOnly());
+                .RuleFor(o => o.DOB, f => f.Person.DateOfBirth);
 
-            var result = new List<Member>();
+            var result = new List<MemberDto>();
             for (int i = 1; i <= 500; i++)
             {
-                ((Member)faker).ID = i;
-               
-                result.Add(faker);
+                var MemberDto = (MemberDto)faker;
+                MemberDto.ID = i;
+                result.Add(MemberDto);
             }
 
-            
+            return result;
         }
-
     }
 }
