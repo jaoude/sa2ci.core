@@ -24,7 +24,7 @@
             }
         }
         return false;
-    }
+    } 
 
     bool ExportToTypeScriptFilter(Class c){
         bool select = false;

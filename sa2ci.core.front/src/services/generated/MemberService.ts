@@ -3,16 +3,16 @@ import { MemberDto } from '@/models/generated/MemberDto';
  
 import api from '@/infrastructure/api'
 
-export class MembersService {
+export class MemberService {
     
 
-    public getAll (){
+    public getMembers (){
         return api.request<MemberDto[]>({
-            url:`Members/getAll`,
+            url:`https://localhost:44330/api/Member/GetMembers`,
             method: "get",
             params : null
         });
     }
 }
 
-export const membersService= new MembersService();
+export const memberService= new MemberService();

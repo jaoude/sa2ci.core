@@ -8,18 +8,18 @@ using Sa2ci.Core.Dal.Data.Entities;
 
 namespace Sa2ci.Core.Bll.Services
 {
-    public class MembersService : IMembersService
+    public class MemberService : IMemberService
     {
         private readonly Sa2ciCoreContext _context;
         private readonly IMapper _mapper;
 
-        public MembersService(Sa2ciCoreContext context, IMapper mapper)
+        public MemberService(Sa2ciCoreContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<List<MemberDto>> GetAllAsync()
+        public async Task<List<MemberDto>> GetMembersAsync()
         {
 
             //var result = await _context.Members

@@ -6128,6 +6128,11 @@ vue@^3.2.13:
   resolved "https://registry.yarnpkg.com/@vuetify/nightly/-/nightly-3.0.0-next-20220712.0.tgz#3234b10e61c2981311da1b5a394730e4172c814c"
   integrity sha512-mWL2wkwnlq4VWwI09Ze8kEcPhmdsK+RTTHxNyZLt75KC/sp91nd5aCWc8GyFOhoo14wd3Dp2K1e0aRMVEGY9XQ==
 
+vuex-class-modules@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/vuex-class-modules/-/vuex-class-modules-1.3.0.tgz#b2d3bfb8b70577b17fbdf2cce2cf0308e54d75fd"
+  integrity sha512-WH+BwOgJHN0g2pzHdy7pDOLItdEAxm5z8VNEUYDBD3L7UPWoL7NptATczUiP66mBY8rIM25eN7lNCzz66Cg2QQ==
+
 vuex@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-4.0.2.tgz#f896dbd5bf2a0e963f00c67e9b610de749ccacc9"

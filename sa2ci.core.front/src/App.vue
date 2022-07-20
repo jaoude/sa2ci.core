@@ -30,10 +30,15 @@
 <script lang="ts">
 
 import { Vue } from "vue-class-component";
+import { memberStore } from "@/store/modules/member-store"
 
 export default class App extends Vue {
   tab = 'Appetizers';
   tabs: { "name": string, "to": string }[] = [{ "name": "Home", "to": "/" }, { "name": "Members", "to": "/members" }, { "name": "About", "to": "/about" }];
+
+  async created(){
+    await memberStore.loadMembers();
+  }
 }
 </script>
 

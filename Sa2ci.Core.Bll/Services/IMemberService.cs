@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 
 namespace Sa2ci.Core.Bll.Services
 {
-    public interface IMembersService
+    public interface IMemberService
     {
-        Task<List<MemberDto>> GetAllAsync();
+        Task<List<MemberDto>> GetMembersAsync();
     }
 }

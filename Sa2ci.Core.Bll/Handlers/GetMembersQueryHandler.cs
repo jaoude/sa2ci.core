@@ -11,16 +11,16 @@ namespace Sa2ci.Core.Bll.Queries
 {
     public class GetMembersQueryHandler : IRequestHandler<GetMembersQuery, List<MemberDto>>
     {
-        private readonly IMembersService _membersService;
+        private readonly IMemberService _memberService;
 
-        public GetMembersQueryHandler(IMembersService membersService)
+        public GetMembersQueryHandler(IMemberService membersService)
         {
-            _membersService = membersService;
+            _memberService = membersService;
         }
 
         public async Task<List<MemberDto>> Handle(GetMembersQuery request, CancellationToken cancellationToken)
         {
-            return await _membersService.GetAllAsync();
+            return await _memberService.GetMembersAsync();
         }
     }
 }

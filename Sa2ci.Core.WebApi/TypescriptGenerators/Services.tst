@@ -23,7 +23,7 @@
 
     string ToLowerCase(string s){
         return Char.ToLowerInvariant(s[0]) + s.Substring(1);
-    }
+    } 
 
     string GenerateImports(Class c){
         var imports="";

@@ -26,8 +26,8 @@
     <None Update="TypescriptGenerators\MemberDto.ts">
       <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\MemberDto.cs</CustomToolNamespace>
     </None>
-    <None Update="TypescriptGenerators\MembersService.ts">
-      <CustomToolNamespace>Controllers\MembersController.cs</CustomToolNamespace>
+    <None Update="TypescriptGenerators\MemberService.ts">
+      <CustomToolNamespace>Controllers\MemberController.cs</CustomToolNamespace>
     </None>
     <None Update="TypescriptGenerators\WeatherForecastService.ts">
       <CustomToolNamespace>Controllers\WeatherForecastController.cs</CustomToolNamespace>
