@@ -4,10 +4,10 @@ using System.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
-using Sa2ci.Core.Bll.Services;
 using Sa2ci.Core.Bll;
 using AutoMapper;
 using Sa2ci.Core.WebApi.Controllers;
+using Sa2ci.Core.Bll.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,13 +22,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(BLLEntryPoint).Assembly);
 builder.Services.AddTransient<IMemberService, MemberService>();
+builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddMediatR(typeof(BLLEntryPoint).Assembly);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:8080", "http://10.0.0.245:8080/");
+                          policy.WithOrigins("http://localhost:8080", "http://localhost:8081", "http://10.0.0.245:8080/");
                       });
 });
 

@@ -1,5 +1,5 @@
-<!-- <template>
-  <div>
+<template>
+  <!-- <div>
     <v-btn>AAAAAAAA</v-btn>
     <v-data-table :headers="headers" :items="items" fixed-header dense>
     {{items}}
@@ -16,9 +16,9 @@
       </template>
     </v-data-table>
     <h1>This is the members page</h1>
-  </div>
-</template> -->
-<template>
+  </div> -->
+<!-- </template>
+<template> -->
   <v-table>
     <thead>
       <tr >
@@ -36,7 +36,7 @@
           <td>{{ item.FirstName }}</td>
           <td>{{ item.LastName }}</td>
           <td>{{ item.Email }}</td>
-          <td>{{ item.DOB }}</td> 
+          <td>{{ dateOfBirth(item.DOB) }}</td> 
       </tr>
     </tbody>
   </v-table>
@@ -59,6 +59,12 @@ export default class MembersView extends Vue {
   get items(): MemberDto[] {
     return this.tmp1;
   }
+
+  dateOfBirth (dt:Date):string{
+      return (new Date(dt)).toDateString();
+
+  }
+
 
   tmp1 = memberStore.members;
 

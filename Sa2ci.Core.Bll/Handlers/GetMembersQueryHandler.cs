@@ -13,9 +13,9 @@ namespace Sa2ci.Core.Bll.Queries
     {
         private readonly IMemberService _memberService;
 
-        public GetMembersQueryHandler(IMemberService membersService)
+        public GetMembersQueryHandler(IMemberService memberService)
         {
-            _memberService = membersService;
+            _memberService = memberService;
         }
 
         public async Task<List<MemberDto>> Handle(GetMembersQuery request, CancellationToken cancellationToken)

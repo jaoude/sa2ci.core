@@ -19,11 +19,11 @@
         return returnType.Name;
     } 
 
-    string ServiceName(Class c) => c.Name.Replace("Controller", "Service");
+    string ServiceName(Class c) => c.Name.Replace("Controller", "Service"); 
 
     string ToLowerCase(string s){
         return Char.ToLowerInvariant(s[0]) + s.Substring(1);
-    } 
+    }  
 
     string GenerateImports(Class c){
         var imports="";

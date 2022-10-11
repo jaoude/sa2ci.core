@@ -8,7 +8,7 @@ export class MemberService {
 
     public getMembers (){
         return api.request<MemberDto[]>({
-            url:`https://localhost:44330/api/Member/GetMembers`,
+            url:`api/Member/getMembers`,
             method: "get",
             params : null
         });

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sa2ci.Core.Dal.Data;
 
@@ -11,9 +12,10 @@ using Sa2ci.Core.Dal.Data;
 namespace Sa2ci.Core.Dal.Migrations
 {
     [DbContext(typeof(Sa2ciCoreContext))]
-    partial class Sa2ciCoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220729181510_InitialSchema")]
+    partial class InitialSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

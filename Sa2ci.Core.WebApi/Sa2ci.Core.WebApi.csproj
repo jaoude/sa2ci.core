@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
   </ItemGroup>
 
@@ -23,11 +23,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TypescriptGenerators\LoginRequestDto.ts">
+      <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\LoginRequestDto.cs</CustomToolNamespace>
+    </None>
+    <None Update="TypescriptGenerators\LoginResultDto.ts">
+      <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\LoginResultDto.cs</CustomToolNamespace>
+    </None>
     <None Update="TypescriptGenerators\MemberDto.ts">
       <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\MemberDto.cs</CustomToolNamespace>
     </None>
     <None Update="TypescriptGenerators\MemberService.ts">
       <CustomToolNamespace>Controllers\MemberController.cs</CustomToolNamespace>
+    </None>
+    <None Update="TypescriptGenerators\UserDto - Copy.ts">
+      <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\UserDto - Copy.cs</CustomToolNamespace>
+    </None>
+    <None Update="TypescriptGenerators\UserDto.ts">
+      <CustomToolNamespace>..\Sa2ci.Core.Bll\Dtos\UserDto.cs</CustomToolNamespace>
+    </None>
+    <None Update="TypescriptGenerators\UserService.ts">
+      <CustomToolNamespace>Controllers\UserController.cs</CustomToolNamespace>
     </None>
     <None Update="TypescriptGenerators\WeatherForecastService.ts">
       <CustomToolNamespace>Controllers\WeatherForecastController.cs</CustomToolNamespace>
