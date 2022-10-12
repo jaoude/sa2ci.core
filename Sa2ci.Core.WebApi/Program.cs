@@ -9,7 +9,7 @@ using AutoMapper;
 using Sa2ci.Core.WebApi.Controllers;
 using Sa2ci.Core.Bll.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);  
 
 // Add services to the container.
 var connecntionString = builder.Configuration.GetConnectionString("DefaultConnection");
