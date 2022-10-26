@@ -8,12 +8,18 @@ using Sa2ci.Core.Bll;
 using AutoMapper;
 using Sa2ci.Core.WebApi.Controllers;
 using Sa2ci.Core.Bll.Services;
+using Microsoft.Extensions.Logging.Configuration;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog();
 
 // Add services to the container.
 var connecntionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).CreateLogger();
+   
+
 builder.Services.AddDbContext<Sa2ciCoreContext>(options => options.UseSqlServer(connecntionString));
 
 builder.Services.AddControllers();
@@ -56,4 +62,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+Log.Information("Application Starting Up");
 app.Run();

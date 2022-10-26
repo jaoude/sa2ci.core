@@ -15,5 +15,10 @@ namespace Sa2ci.Core.Bll.Dtos
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime DOB { get; set; }
+
+        public override string ToString()
+        {
+            return $"ID : {ID}, FirstName : {FirstName}, LastName : {LastName}";
+        }
     }
 }

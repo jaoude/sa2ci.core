@@ -23,6 +23,7 @@ namespace Sa2ci.Core.WebApi.Controllers
         {
             var query = new GetMembersQuery();
             var result = await _mediator.Send(query);
+            _logger.LogInformation(String.Join("\r\n", result.Select(c => c.ToString())));
             return result;
         }
     }
