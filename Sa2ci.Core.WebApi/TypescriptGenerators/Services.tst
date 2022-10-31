@@ -12,7 +12,7 @@
     }
     
     string ReturnType(Method m) {
-    var returnType = m.Type.TypeArguments.FirstOrDefault();  
+    var returnType = m.Type.TypeArguments.FirstOrDefault();   
     if(m.Type.IsEnumerable || returnType==null)
         return m.Type.Name == "void" || m.Type.Name == "IActionResult" ? "any": m.Type.Name;
     else  
@@ -22,7 +22,7 @@
     string ServiceName(Class c) => c.Name.Replace("Controller", "Service"); 
 
     string ToLowerCase(string s){
-        return Char.ToLowerInvariant(s[0]) + s.Substring(1);
+        return Char.ToLowerInvariant(s[0]) + s.Substring(1); 
     }  
 
     string GenerateImports(Class c){

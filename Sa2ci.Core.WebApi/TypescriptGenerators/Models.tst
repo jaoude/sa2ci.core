@@ -3,13 +3,13 @@
     using Typewriter.Extensions.WebApi;
 
     // Uncomment the constructor to change template settings.
-    Template(Settings settings)
+    Template(Settings settings) 
     {
         settings.IncludeProject("Sa2ci.Core.Bll");
         settings.IncludeProject("Sa2ci.Core.Common");
     }
 
-    bool ClassShouldBeExported(Class c) { 
+    bool ClassShouldBeExported(Class c) {  
         if (ExportToTypeScriptFilter(c)) { 
             return true;
         } 
