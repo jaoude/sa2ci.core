@@ -11,8 +11,8 @@ namespace Sa2ci.Core.Bll.Dtos
     public class MemberDto
     { 
         public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; init; }
+        public string LastName { get; init; }
         public string Email { get; set; }
         public DateTime DOB { get; set; }
 

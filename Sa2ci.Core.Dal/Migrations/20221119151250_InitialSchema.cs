@@ -13,7 +13,8 @@ namespace Sa2ci.Core.Dal.Migrations
                 name: "Member",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     LastName = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "varchar(254)", unicode: false, maxLength: 254, nullable: false),

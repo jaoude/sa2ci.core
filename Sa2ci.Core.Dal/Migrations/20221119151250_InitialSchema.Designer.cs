@@ -12,14 +12,14 @@ using Sa2ci.Core.Dal.Data;
 namespace Sa2ci.Core.Dal.Migrations
 {
     [DbContext(typeof(Sa2ciCoreContext))]
-    [Migration("20220729181510_InitialSchema")]
+    [Migration("20221119151250_InitialSchema")]
     partial class InitialSchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -27,7 +27,10 @@ namespace Sa2ci.Core.Dal.Migrations
             modelBuilder.Entity("Sa2ci.Core.Dal.Data.Entities.Member", b =>
                 {
                     b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<DateTime>("DOB")
                         .HasColumnType("datetime2");

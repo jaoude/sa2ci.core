@@ -11,7 +11,7 @@ namespace Sa2ci.Core.Dal.Data.Entities
     [Table("Member")]
     public class Member
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Required]
