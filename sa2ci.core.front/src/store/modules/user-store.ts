@@ -11,15 +11,16 @@ export class UserStore extends VuexModule {
     isAuthenticated = false;
 
     async login(email: string, password: string) {
-        this.loginResult = (await userService.login({ Email: email, Password: password })).data;
+        this.loginResult = (await userService.login({ Email: 'sassine.jaoude@hotmail.com', Password: '111111' })).data;
 
         this._accessToken = this.loginResult.AccessToken;
-        this.userName = this.loginResult.UserName;
+        this.userName = this.loginResult.UserName; 
         this.isAuthenticated = true;
+        
     }
 
     getAccessToken():string {
-        alert(this._accessToken);
+        //alert(this._accessToken);
         return this._accessToken;
     }
     // @Action
